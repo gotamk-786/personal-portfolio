@@ -36,5 +36,3 @@ The “Download Résumé” button expects `assets/resume.pdf`. Add your PDF the
 - Smooth scrolling with scroll padding for fixed navbar.
 - Visible focus/hover states on buttons/links/cards.
 
-## Deployment
-Any static host works (GitHub Pages, Netlify, Vercel). Just serve the root directory.
