@@ -1,0 +1,485 @@
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(100, 255, 218, 0.03));
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -150px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: 15%;
+    left: -80px;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 180px;
+    height: 180px;
+    top: 45%;
+    right: 8%;
+    animation-delay: -10s;
+}
+
+.shape-4 {
+    width: 120px;
+    height: 120px;
+    bottom: 8%;
+    right: 25%;
+    animation-delay: -15s;
+}
+
+.shape-5 {
+    width: 100px;
+    height: 100px;
+    top: 25%;
+    left: 15%;
+    animation-delay: -7s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30px, -40px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-20px, 30px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(40px, 15px) rotate(3deg);
+    }
+}
+
+.hero-content,
+.hero-decoration {
+    position: relative;
+    z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Name Highlight with Animated Gradient
+   -------------------------------------------------------------------------- */
+.name-highlight {
+    background: linear-gradient(135deg, #64ffda, #82d4bb, #a8f0e3, #64ffda);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Typing Effect Cursor
+   -------------------------------------------------------------------------- */
+.typing-text {
+    color: var(--color-text-muted);
+}
+
+.cursor {
+    color: var(--color-accent);
+    animation: blink 1s infinite;
+    font-weight: 100;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Enhanced Code Block with Window Header
+   -------------------------------------------------------------------------- */
+.code-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+    box-shadow: 0 0 8px rgba(255, 95, 86, 0.5);
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+    box-shadow: 0 0 8px rgba(255, 189, 46, 0.5);
+}
+
+.dot.green {
+    background: #27c93f;
+    box-shadow: 0 0 8px rgba(39, 201, 63, 0.5);
+}
+
+.code-title {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: 'Inter', sans-serif;
+}
+
+.code-block {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.code-block:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Stats Section
+   -------------------------------------------------------------------------- */
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    animation: fadeInUp 0.6s ease 0.5s forwards;
+    opacity: 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #64ffda;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #8892b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Button Enhancements
+   -------------------------------------------------------------------------- */
+.btn-icon {
+    font-size: 1.1em;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #a8b2d1;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.btn-outline:hover {
+    border-color: #64ffda;
+    color: #64ffda;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Glassmorphism Cards
+   -------------------------------------------------------------------------- */
+.project-card,
+.service-card,
+.skill-category,
+.education-card,
+.contact-form {
+    background: rgba(17, 34, 64, 0.7) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* --------------------------------------------------------------------------
+   Card Hover Glow Effect
+   -------------------------------------------------------------------------- */
+.project-card,
+.service-card {
+    position: relative;
+}
+
+.project-card::before,
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, transparent, rgba(100, 255, 218, 0.08));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.project-card:hover::before,
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.project-card>*,
+.service-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Enhanced Section Titles
+   -------------------------------------------------------------------------- */
+.section-title {
+    background: linear-gradient(135deg, #e6f1ff, #64ffda);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, #64ffda, rgba(100, 255, 218, 0.3), transparent) !important;
+    width: 120px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Profile Image Float Animation
+   -------------------------------------------------------------------------- */
+.profile-image {
+    animation: profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.02);
+    }
+}
+
+.profile-image:hover {
+    animation-play-state: paused;
+}
+
+/* --------------------------------------------------------------------------
+   Enhanced Skill Bars Gradient Animation
+   -------------------------------------------------------------------------- */
+.skill-progress {
+    background: linear-gradient(90deg, #64ffda, #4cd9b9, #82d4bb, #64ffda) !important;
+    background-size: 300% 100% !important;
+    animation: skillGradient 3s ease infinite !important;
+}
+
+@keyframes skillGradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Progress Indicator
+   -------------------------------------------------------------------------- */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #64ffda, #82d4bb);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   Social Link Hover Effects
+   -------------------------------------------------------------------------- */
+.social-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.social-link:hover::before {
+    width: 150%;
+    height: 150%;
+}
+
+/* --------------------------------------------------------------------------
+   Improved Subject Links in Education
+   -------------------------------------------------------------------------- */
+.subject-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.subject-link:hover::before {
+    left: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Form Input Focus Effects
+   -------------------------------------------------------------------------- */
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.15), 0 0 20px rgba(100, 255, 218, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Footer Enhancement
+   -------------------------------------------------------------------------- */
+.footer {
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   Page Load Animation
+   -------------------------------------------------------------------------- */
+body {
+    animation: pageLoad 0.8s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
